@@ -1,7 +1,7 @@
 'use strict'
 
 angular
-    .module('my-town', ['ngRoute'])
+    .module('my-town', ['ngRoute', 'uiGmapgoogle-maps'])
         .config($routeProvider => 
             $routeProvider
                 .when('/', {
@@ -21,7 +21,6 @@ angular
         });
     })
     .controller('HomeCtrl', function($scope, uiGmapGoogleMapApi){
-            uiGmapGoogleMapApi.then(function(maps) {
-            });
+           $scope.map = { center: { latitude: 45, longitude: -73 }, zoom: 8 };
     })
     .controller('MapCtrl', function($scope){})
