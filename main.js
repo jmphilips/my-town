@@ -1,7 +1,7 @@
 'use strict'
 
 angular
-    .module('my-town', ['ngRoute', 'uiGmapgoogle-maps'])
+    .module('my-town', ['ngRoute', 'ngMap'])
         .config($routeProvider => 
             $routeProvider
                 .when('/', {
@@ -13,14 +13,12 @@ angular
                     templateUrl: 'partials/map.html'
                 })
     )
-    .config(function(uiGmapGoogleMapApiProvider) {
-        uiGmapGoogleMapApiProvider.configure({
-            key: 'AIzaSyBIjfTBFP_wQKmOzUG8baijPFRcKCqUQ7w',
-            v: '3.20', //defaults to latest 3.X anyhow
-            libraries: 'weather,geometry,visualization'
+    .controller('HomeCtrl', function($scope, NgMap) {
+        $scope.googleMapsUrl="https://maps.googleapis.com/maps/api/js?key=AIzaSyBIjfTBFP_wQKmOzUG8baijPFRcKCqUQ7w"
+        NgMap.getMap().then(function(map) {
+        console.log(map.getCenter());
+        console.log('markers', map.markers);
+        console.log('shapes', map.shapes);
         });
-    })
-    .controller('HomeCtrl', function($scope, uiGmapGoogleMapApi){
-           $scope.map = { center: { latitude: 45, longitude: -73 }, zoom: 8 };
     })
     .controller('MapCtrl', function($scope){})
