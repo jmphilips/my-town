@@ -17,6 +17,8 @@
   "dependencies": {
     "angular": "^1.5.8",
     "ng-tour": "ng-route#*",
-    "angular-route": "^1.5.8"
+    "angular-route": "^1.5.8",
+    "angular-google-maps": "^2.4.0",
+    "ngmap": "^1.17.6"
   }
 }
