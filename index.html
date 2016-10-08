@@ -7,15 +7,16 @@
         <link href="main.css" rel="stylesheet">
     </head>
     <body>
-        <h1>My Town</h1>
-        <div id="map"></div>
-        
 
+        <div ng-app="my-town"> 
+            <div class="container">   
+                <div ng-view></div> 
+            </div>
+        </div>
 
-        <script async defer
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBIjfTBFP_wQKmOzUG8baijPFRcKCqUQ7w&callback=initMap">
-        </script>
+        <script src="/lib/angular/angular.min.js"></script>
+        <script src="/lib/angular-route/angular-route.min.js"></script>
         <script src="private.js"></script> 
-        <script src="main.js"></script
+        <script src="main.js"></script>
     </body>
 </html>
