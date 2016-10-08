@@ -1,0 +1,22 @@
+{
+  "name": "leaflet-location-finder",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jmphilips/my-town.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jmphilips/my-town/issues"
+  },
+  "homepage": "https://github.com/jmphilips/my-town#readme",
+  "dependencies": {
+    "bower": "^1.7.9"
+  }
+}
