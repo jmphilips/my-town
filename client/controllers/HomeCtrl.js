@@ -11,8 +11,8 @@ app.controller('HomeCtrl', function($scope, NgMap, WeatherFactory, isTrue) {
                         .then((results) => {
                             console.log(results)
                             $scope.hey = results.current_observation.display_location.full;
-                            $scope.fahr = results.current_observation.feelslike_f;
-
+                            $scope.fahr = Math.floor(results.current_observation.feelslike_f);
+                            $scope.currentWeather = results.current_observation.weather;
                             $scope.rain = isTrue.returnsShouldYouMowString($scope.fahr, results.current_observation.precip_today_in)
                     })
             });

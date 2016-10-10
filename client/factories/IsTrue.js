@@ -26,7 +26,5 @@ app.factory('isTrue', function(){
         }
     };
 
-
-
     return {isTempTooCold, isTempTooHot, isRain, shouldYouMow, returnsShouldYouMowString}
 })
