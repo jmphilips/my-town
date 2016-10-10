@@ -1,6 +1,6 @@
 'use strict'
 
-const app = angular.module('my-town', ['ngRoute', 'ngMap', ])
+const app = angular.module('my-town', ['ngRoute', 'ngMap' ])
         .config($routeProvider => 
             $routeProvider
                 .when('/', {

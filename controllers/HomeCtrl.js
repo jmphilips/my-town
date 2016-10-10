@@ -1,6 +1,6 @@
 'use strict'
 
-app.controller('HomeCtrl', function($scope, NgMap, WeatherFactory) {
+app.controller('HomeCtrl', function($scope, NgMap, WeatherFactory, isTrue) {
         $scope.googleMapsUrl="https://maps.googleapis.com/maps/api/js?key=AIzaSyBIjfTBFP_wQKmOzUG8baijPFRcKCqUQ7w"
          
             if (navigator.geolocation) {
@@ -12,6 +12,8 @@ app.controller('HomeCtrl', function($scope, NgMap, WeatherFactory) {
                             console.log(results)
                             $scope.hey = results.current_observation.display_location.full;
                             $scope.fahr = results.current_observation.feelslike_f;
+
+                            $scope.rain = isTrue.returnsShouldYouMowString($scope.fahr, results.current_observation.precip_today_in)
                     })
             });
         };   

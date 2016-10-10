@@ -1,6 +1,6 @@
 'use strict'
 
-app.factory('is-true', function(){
+app.factory('isTrue', function(){
 
     const isTempTooCold = (temp) => {
         return temp > 60;
@@ -11,11 +11,11 @@ app.factory('is-true', function(){
     };
 
     const isRain = (precipToday) => {
-        return precipToday < 0;
+        return precipToday <= 0;
     }
     
     const shouldYouMow = (temp, precipToday) => {
-        return isTempTooCold(temp) && isTempTooHot(temp) && isRain(precipToday)
+        return isTempTooCold(temp) && isTempTooHot(temp) && isRain(precipToday);
     }
 
     const returnsShouldYouMowString = (temp, precipToday) => {
@@ -27,6 +27,6 @@ app.factory('is-true', function(){
     };
 
 
-    
 
+    return {isTempTooCold, isTempTooHot, isRain, shouldYouMow, returnsShouldYouMowString}
 })
