@@ -2,8 +2,12 @@
   "name": "leaflet-location-finder",
   "version": "1.0.0",
   "description": "",
-  "main": "main.js",
+  "main": "server.js",
+  "engines": {
+    "node": "6"
+  },
   "scripts": {
+    "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
