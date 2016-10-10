@@ -38,7 +38,7 @@ app.controller('HomeCtrl', function($scope, NgMap, WeatherFactory) {
                 navigator.geolocation.getCurrentPosition(function(position){  
                     let latitude = position.coords.latitude;
                     let longitude = position.coords.longitude;
-                    WeatherFactory.getWeather(`http://api.wunderground.com/api/9a5695c0cb2e4520/geolookup/conditions/q/${latitude},${longitude}.json`)
+                    WeatherFactory.getWeather(`https://api.wunderground.com/api/9a5695c0cb2e4520/geolookup/conditions/q/${latitude},${longitude}.json`)
                         .then((results) => {
                             console.log(results)
                             $scope.hey = results.current_observation.display_location.full;
