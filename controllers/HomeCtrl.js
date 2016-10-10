@@ -16,3 +16,4 @@ app.controller('HomeCtrl', function($scope, NgMap, WeatherFactory) {
             });
         };   
 })
+
