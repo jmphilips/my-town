@@ -1,7 +1,6 @@
 'use strict'
 
 app.controller('HomeCtrl', function($scope, NgMap, WeatherFactory) {
-        $scope.googleMapsUrl="https://maps.googleapis.com/maps/api/js?key=AIzaSyBIjfTBFP_wQKmOzUG8baijPFRcKCqUQ7w"
 
         const isTempTooCold = (temp) => {
         return temp > 60;
@@ -26,13 +25,6 @@ app.controller('HomeCtrl', function($scope, NgMap, WeatherFactory) {
                 return "Nah, take the day off"
             }
         };
-
-
-
-
-
-
-
          
             if (navigator.geolocation) {
                 navigator.geolocation.getCurrentPosition(function(position){  
