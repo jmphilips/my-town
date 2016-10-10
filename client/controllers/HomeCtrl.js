@@ -1,7 +1,38 @@
 'use strict'
 
-app.controller('HomeCtrl', function($scope, NgMap, WeatherFactory, isTrue) {
+app.controller('HomeCtrl', function($scope, NgMap, WeatherFactory) {
         $scope.googleMapsUrl="https://maps.googleapis.com/maps/api/js?key=AIzaSyBIjfTBFP_wQKmOzUG8baijPFRcKCqUQ7w"
+
+        const isTempTooCold = (temp) => {
+        return temp > 60;
+        };
+
+        const isTempTooHot = (temp) => {
+            return temp < 100;
+        };
+
+        const isRain = (precipToday) => {
+            return precipToday <= 0;
+        }
+    
+        const shouldYouMow = (temp, precipToday) => {
+            return isTempTooCold(temp) && isTempTooHot(temp) && isRain(precipToday);
+        }
+
+        const returnsShouldYouMowString = (temp, precipToday) => {
+            if (shouldYouMow(temp, precipToday)) {
+                return "You should mow today"
+            } else {
+                return "Nah, take the day off"
+            }
+        };
+
+
+
+
+
+
+
          
             if (navigator.geolocation) {
                 navigator.geolocation.getCurrentPosition(function(position){  
@@ -13,7 +44,7 @@ app.controller('HomeCtrl', function($scope, NgMap, WeatherFactory, isTrue) {
                             $scope.hey = results.current_observation.display_location.full;
                             $scope.fahr = Math.floor(results.current_observation.feelslike_f);
                             $scope.currentWeather = results.current_observation.weather;
-                            $scope.rain = isTrue.returnsShouldYouMowString($scope.fahr, results.current_observation.precip_today_in)
+                            $scope.rain = returnsShouldYouMowString($scope.fahr, results.current_observation.precip_today_in)
                     })
             });
         };   
